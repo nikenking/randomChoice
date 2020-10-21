@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>爬虫</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" type="text/css" href="/css/random.css" th:href="@{/css/random-v2-3.css}"/><!---->
+    <script src="js/jquery-1.10.2.min.js" th:src="@{/js/jquery-1.10.2.min.js}"></script>
+    <script>
+        $(function () {
+            $('#start').click(function () {
+                $('#time').hide();
+                $('.checkthis').removeClass('drop');
+                var drop = $('.drop');
+                for (let i = 0; i !== drop.length; i++) {
+                    var rand = Math.floor(Math.random() * 500);
+                    $(drop[i]).delay(rand).animate({
+                        top: '200px',
+                        opacity: 0,
+                    }, 2500);
+                }
+
+                $('#start').hide();
+                $('#time').show();
+                $('.checkthis').animate({
+                    width: '150px',
+                    height: '150px',
+                    fontSize: "34px",
+                    lineHeight: "150px",
+                }, 2500);
+                $('.checkthis').addClass('checkthiscenter');
+            });
+            $('#time').click(function () {
+                var settime;
+                var setmin = $('#setmin').val() * 60;
+                var sets = ($('#sets').val());
+                settime = parseInt(setmin) + parseInt(sets) - 1;
+                var down = parseInt(settime);
+                localStorage.setItem('down', down);
+
+                function start() {
+                    interval = setInterval(function () {
+                        var min;
+                        var s;
+                        if (down >= 0) {
+                            min = Math.floor(localStorage.getItem("down") / 60);
+                            s = Math.floor(localStorage.getItem("down") - 60 * min);
+                        }
+                        $('#leftTime').text(min);
+                        $('#rightTime').text(s);
+                        down--;
+                        localStorage.setItem('down', down);
+                    }, 1000);
+                }
+
+                if ($('#time').text() === "开始计时") {
+                    $('#time').text('重新开始');
+                    start();
+                } else {
+                    window.location.reload()
+                }
+            });
+            var arr = ["将给做好事的人发红包，你支持吗？",
+                "父母该不该告诉孩子，童话都是假的？",
+                "高薪不喜欢和低薪很喜欢的工作，你选哪个？",
+                "如果有一瓶可以消除悲伤的水，你要不要喝？",
+                "“能者多劳”是不是在坑我？",
+                "父母提出住养老院支持吗？",
+                "臭不要脸是一件坏事吗？",
+                "世界需不需要超级英雄？",
+                "消灭谎言的科技该支持么？",
+                "如果一个月后就是世界末日，当局应该公布消息还是秘而不宣？",
+                " 小朋友被欺负了，应该鼓励打回去还是告老师？",
+                " 长生不老是不是一件好事？",
+                "人到30岁是做稳定的工作还是追求梦想",
+                "努力和选择你觉得哪一个更重要一点？",
+                "如何看待同性婚姻合法化",
+                "谈谈你对“棍棒式教育”的看法",
+                "在外面吃饭聚餐要不要用公筷谈谈你的看法，如果要，谈谈如何才能普及",
+                "罗志祥如果要复出的话，你会支持或者反对吗",
+                "谈谈你对“好事不留名，坏事传千里的”的理解",
+                "对于另一半的选择，你是喜欢被动还是主动，为什么？"];
+
+            function random(a, b) {
+                return Math.round(Math.random() * (b - a) + a);
+            }
+
+            $("#topic").click(function () {
+                $('#topicMsg').css("fontSize","12px");
+                $('#topBox').hide();
+                $('#topBox').show();
+                $('#topicMsg').animate({
+                    fontSize: "30px",
+                }, 2500);
+                var num = random(0, arr.length - 1);
+                $("#topicMsg").text(arr[num]);
+            });
+        })
+    </script>
+</head>
+<body>
+<!-- 头部所有名字集合 -->
+<div class="top">
+    <span class="name drop" th:each="u:${users}" th:text="${u.getName()}"
+          th:class="${u.getName() eq choice.getName()}?'name drop checkthis':'name drop'">贺缙殷</span>
+</div>
+
+<!-- 下半部分 -->
+<div id="topBox" class="topBox">
+    <span id="topicMsg" style="font-size: 12px"></span>
+</div>
+<div class="bottom">
+    <!-- 计时器和开始按钮 -->
+    <div class="startbox">
+        <button class="time" id="time">开始计时</button>
+        <button class="start" id="start">抽人</button>
+    </div>
+    <!-- 计时器面板 -->
+    <div class="timebox">
+        <div class="left" id="leftTime">
+            <input type="number" id="setmin" value="5"/>
+        </div>
+        <div class="center">：</div>
+        <div class="right" id="rightTime">
+            <input type="number" id="sets" value="0"/>
+        </div>
+    </div>
+    <div class="startbox">
+        <button class="time" id="topic">抽取话题</button>
+    </div>
+</div>
+
+</body>
+</html>

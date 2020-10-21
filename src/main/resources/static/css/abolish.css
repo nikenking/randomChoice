@@ -1,0 +1,161 @@
+html,
+body {
+    padding: 0;
+    margin: 0;
+    height: 800px;
+    background: rgb(255, 254, 241);
+}
+
+.top {
+    width: 100%;
+    height: 400px;
+    background: url(/img/top2.png) no-repeat;
+    background-size: 100% 100%;
+    /* box-shadow: 0 0 10px rgb(224, 212, 212); */
+    position: relative;
+}
+
+.name {
+    position: relative;
+    display: inline-block;
+    width: 75px;
+    height: 75px;
+    line-height: 75px;
+    background: rgb(#9FB4F7);
+    box-shadow:10px 0 10px 10px rgb(186, 229, 236);
+    color: rgb(87, 82, 82);
+    text-align: center;
+    border-radius: 50%;
+    margin: 10px;
+
+}
+
+.name:hover {
+    background: rgb(172, 223, 250);
+    color: white;
+
+}
+
+.bottom {
+    display: flex;
+    width: 100%;
+    height: 400px;
+    justify-content: space-around;
+}
+
+.startbox {
+    position: relative;
+    width: 200px;
+    height: 200px;
+}
+
+.timebox {
+    margin-top: 50px;
+    width: 1000px;
+    height: 200px;
+}
+
+.start,
+.time {
+    width: 200px;
+    height: 200px;
+    line-height: 100px;
+    border-radius: 50%;
+    border: none;
+    box-shadow: 0 0 10px rgb(255, 255, 255);
+    margin: 50px;
+    color: rgb(107, 85, 85);
+    font-size: 30px;
+    outline: none;
+    background-image: linear-gradient(rgb(199, 192, 234), #ECD8EB);
+    position: absolute;
+    left: 0;
+    z-index: 10;
+}
+
+
+
+.start:hover,
+.time:hover {
+    background-image: linear-gradient(#F9C7E1, #F9C7E1);
+
+    color: white;
+}
+
+.start:active,
+.time:active {
+    background-image: linear-gradient(rgb(232, 226, 236), rgb(241, 238, 245));
+
+    color: rgb(92, 86, 86);
+}
+
+.left,
+.right {
+    width: 400px;
+    height: 200px;
+    float: left;
+    color: rgb(161, 179, 242);
+    font-size: 100px;
+    text-align: center;
+
+    line-height: 200px;
+    box-shadow: 0 0 10px saddlebrown;
+    background-image: linear-gradient(#E7D6E2, rgb(247, 229, 242), rgb(229, 203, 233), rgb(175, 226, 252));
+
+}
+
+#setmin,
+#sets {
+    width: 400px;
+    height: 200px;
+    border: none;
+    font-size: 100px;
+    line-height: 200px;
+    background: transparent;
+    color: rgb(161, 179, 242);
+    text-align: center;
+    outline: none;
+}
+
+.center {
+    height: 200px;
+    width: 100px;
+    float: left;
+    padding-left: 50px;
+    text-align: center;
+    font-size: 100px;
+    line-height: 200px;
+    text-align: center;
+    color: rgb(161, 179, 242);
+    box-shadow: 0 0 10px saddlebrown;
+    background-image: linear-gradient(#E7D6E2, rgb(247, 229, 242), rgb(229, 203, 233), rgb(175, 226, 252));
+}
+
+.left {
+    border-right: none;
+
+}
+
+.right {
+    border-left: none;
+
+}
+
+.checkthiscenter {
+    position: absolute;
+    left: 50%;
+    /*整个块偏移量50%*/
+    transform: translateX(-50%) translateY(-50%);
+    top: 64%;
+    /*相对于自身偏移50%  水平居中*/
+    box-shadow: 0 0 15px rgb(22, 105, 131);
+}
+.topicCenter {
+    position: absolute;
+    left: 50%;
+    /*整个块偏移量50%*/
+    transform: translateX(-50%) translateY(-50%);
+    top: 50%;
+    /*相对于自身偏移50%  水平居中*/
+    box-shadow: 0 0 15px rgb(22, 105, 131);
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>点名器</title>
+    <style>
+        #content{
+            width: 100%;
+            height: 600px;
+            background: blanchedalmond;
+            margin: 100px auto;
+            text-align: center;
+            position: relative;
+            line-height: 300px;
+            counter-reset: blueviolet;
+            font-size: 40px;
+        }
+        #btn1{
+            background: #ccc;
+            width: 180px;
+            height: 80px;
+            font-size: 30px;
+            color: #f40;
+            border-radius: 12px;
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            margin-left: -50px;
+        }
+    </style>
+</head>
+<body>
+<div id="content">
+    <span id="span1">
+        点击开始
+    </span>
+    <button id="btn1">start</button>
+</div>
+<script>
+    var arr=["将给做好事的人发红包，你支持吗？",
+			"父母该不该告诉孩子，童话都是假的？",
+			"高薪不喜欢和低薪很喜欢的工作，你选哪个？",
+
+			"如果有一瓶可以消除悲伤的水，你要不要喝？",
+			"“能者多劳”是不是在坑我？",
+			"我不合群，我要改吗？",
+			"父母提出住养老院支持吗？",
+			"我没有上进心，有错吗?",
+			"臭不要脸是一件坏事吗？",
+			"世界需不需要超级英雄？",
+			"消灭谎言的科技该支持么？",
+			"如果一个月后就是世界末日，当局应该公布消息还是秘而不宣？",
+			" 小朋友被欺负了，应该鼓励打回去还是告老师？",
+			"该不该催好朋友还钱？",
+			" 长生不老是不是一件好事？",
+			" 这是不是一个看脸的社会",
+			"人到30岁是做稳定的工作还是追求梦想"];
+    var $btn1=document.getElementById('btn1');
+    var $content=document.getElementById('content');
+    var $span1=document.getElementById('span1');
+    var timer;
+    var testNum=true;
+    $btn1.onclick=function(){
+        if (testNum){
+            start();
+            $btn1.innerHTML='stop';
+            testNum=false;
+        } else {
+            stop();
+            $btn1.innerHTML='start';
+            testNum=true;
+        }
+    }
+    function start() {
+        timer=setInterval(function () {
+            var num=random(0,arr.length-1);
+            $span1.innerHTML=arr[num];
+        },70)
+    }
+    function random(a,b) {
+        var randomNum=Math.round(Math.random()*(b-a)+a);
+        return randomNum;
+    }
+    function stop() {
+        clearInterval(timer)
+    }
+
+</script>
+</body>
+</html>

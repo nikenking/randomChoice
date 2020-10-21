@@ -1,0 +1,304 @@
+button:focus {
+    border: none;
+    outline: none;
+}
+
+div {
+    display: flex;
+}
+
+body {
+    min-width: 1148px;
+    height: 2000px;
+    margin: 0 auto;
+    background-color: #007ACC;
+}
+
+#rocket {
+    position: fixed;
+    bottom: 100px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+}
+
+#rocket img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+#nav {
+    width: 100%;
+    height: 50px;
+    background-color: #23262E;
+    display: flex;
+    justify-content: space-between;
+}
+
+#nav button {
+    height: 100%;
+    outline: none;
+    border: none;
+    margin: 0 40px;
+    background-color: #23262B;
+    color: white;
+}
+
+#nav_left {
+    display: flex;
+    justify-content: flex-start;
+    width: 50%;
+    height: 100%;
+}
+
+#nav_left button:nth-child(1) {
+    color: #0F685D;
+}
+
+#nav_right {
+    display: flex;
+    justify-content: flex-end;
+    width: 50%;
+    height: 100%;
+    align-items: center;
+}
+
+#nav_right a {
+    width: 30px;
+    height: 30px;
+}
+
+#nav_right img {
+    position: absolute;
+    height: 30px;
+    width: 30ox;
+    border-radius: 50%;
+}
+
+#menu {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 250px;
+    height: 350px;
+    border-radius: 8px;
+    transform: translate(-44%, 30px);
+    background-color: white;
+    display: none;
+}
+
+#nav_right a:hover img {
+    width: 50px;
+    height: 50px;
+    transform: translate(-10px, 0px);
+    transition: 500ms;
+}
+
+#nav_right a:hover div {
+    transition: 300ms;
+    display: flex;
+}
+
+#userBox {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#userBox button:nth-last-child(1) {
+    margin-left: 15px;
+}
+
+#baseMsg {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto 0;
+    width: 80%;
+    height: 50px;
+    color: #FB7299;
+    font-weight: bold;
+    flex-wrap: wrap;
+}
+
+#baseMsg span:nth-last-child(1) {
+    font-size: 12px;
+    color: white;
+    padding: 1px;
+    border-radius: 2px;
+    background-color: #FB7299;
+}
+
+#fuc {
+    width: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 0;
+    margin: 0;
+}
+
+#fuc li {
+    padding-left: 30px;
+    color: #212121;
+}
+
+#fuc li:nth-last-child(1) {
+    margin-top: 3px;
+}
+
+#fuc li:hover {
+    background-color: #F4F4F4;
+}
+
+#rigth_box {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+#fucBar {
+    display: flex;
+    width: 100%;
+    height: 60px;
+}
+
+#fucBar div:nth-child(1) {
+    flex: 1;
+    align-items: center;
+    justify-content: flex-start;
+    font-weight: bold;
+}
+
+#fucBar div span {
+    font-weight: bold;
+    margin: 12px;
+}
+
+#fucBar div:nth-child(1) input {
+    padding: 1px 4px;
+    border-radius: 3px;
+    width: 250px;
+    margin: 0 -20px 0 0;
+    height: 30px;
+    font-size: 12px;
+}
+
+#fucBar div button {
+    margin: 0 30px;
+    padding: 2px 4px;
+    background-color: #009688;
+    border-radius: 3px;
+    height: 30px;
+}
+
+#fucBar div:nth-child(2) {
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+}
+
+#fucBar div:nth-child(2) button {
+    margin: 0 3px;
+}
+
+#fucBar div:nth-child(2) button:nth-child(1) {
+    background-color: #1E9FFF;
+}
+
+#fucBar div:nth-child(2) button:nth-child(2) {
+    background-color: #FFB800;
+}
+
+#exitConfirm {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(8, 7, 7, 0.6);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+#exitConfirmBox {
+    width: 632px;
+    height: 250px;
+    background-color: white;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#exitConfirmBox button {
+    width: 60px;
+    height: 40px;
+    border-radius: 10%;
+    background-color: #5A6268;
+}
+
+#confirmButton {
+    margin-bottom: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+#exitContent {
+    flex-direction: column;
+}
+
+#exitContent dd {
+    display: flex;
+    flex-direction: row;
+    margin-top: 13px;
+    margin-bottom: 0;
+}
+
+#exitContent p input,
+#exitContene p {
+    margin: 0 8px 0;
+    width: 13px;
+    height: 12px;
+}
+
+#mainBox {
+    height: 100%;
+    display: flex;
+}
+
+#left_bar {
+    width: 200px;
+    height: 100%;
+    background-color: #393D49;
+    display: flex;
+    flex-direction: column;
+}
+
+ul {
+    list-style: none;
+    padding: 10px 20px;
+}
+
+li {
+    padding: 15px 6px;
+    color: white;
+}
+
+* {
+    margin: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    list-style: none;
+}
