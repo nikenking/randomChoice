@@ -4,6 +4,7 @@ import com.dell.springboot.entities.User;
 import com.dell.springboot.mapper.LoginMapper;
 import com.dell.springboot.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
@@ -12,8 +13,8 @@ import java.util.*;
 public class UserService {
     @Autowired
     UserMapper um;
-
-    public List<User> getAll() {
+    @Cacheable(cacheNames = "emp",key = "#all")//将这个方法的运行结果进行缓存
+    public List<User> getAll(int all) {
         List<User> list = um.getAll();
         int count = 0;
         for (User user : list) {
