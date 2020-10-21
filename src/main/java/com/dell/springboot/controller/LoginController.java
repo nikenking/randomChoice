@@ -21,7 +21,7 @@ public class LoginController {
     UserService us;
     @RequestMapping(value = {"/","/random"})
     public String random(Model model){
-        List<User> list = us.getAll();
+        List<User> list = us.getAll(60);
         model.addAttribute("choice",list.get(list.size()-1));
         list.remove(list.size()-1);
         model.addAttribute("users",list);
