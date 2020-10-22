@@ -13,7 +13,6 @@ import java.util.*;
 public class UserService {
     @Autowired
     UserMapper um;
-    @Cacheable(cacheNames = "emp",key = "#all")//将这个方法的运行结果进行缓存
     public List<User> getAll(int all) {
         List<User> list = um.getAll();
         int count = 0;

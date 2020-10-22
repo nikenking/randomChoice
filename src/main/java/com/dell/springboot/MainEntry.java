@@ -6,7 +6,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cache.annotation.EnableCaching;
 
 
-@EnableCaching
 @MapperScan(value = "com.dell.springboot.mapper")
 @SpringBootApplication
 public class MainEntry {
