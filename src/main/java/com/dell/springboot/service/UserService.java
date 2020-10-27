@@ -28,7 +28,7 @@ public class UserService {
                 System.out.println("添加一个用户到末尾:"+user.getName()+"当前访问时间:\n");
                 System.out.println(new Date());
                 list.add(user);
-                um.changeTeacher(user);
+                um.changeTeacher(user);//清0
                 break;
             }
         }
