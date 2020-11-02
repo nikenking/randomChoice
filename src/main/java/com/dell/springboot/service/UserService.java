@@ -19,6 +19,14 @@ public class UserService {
         for (User user : list) {
             count += user.getWeight();
         }
+        if (count==0){
+            refresh();
+            um.changeTeacher(new User("郑创",1));
+            list = um.getAll();
+            for (User user : list) {
+                count += user.getWeight();
+            }
+        }
         System.out.println("总权重为"+count);
         int choice = (int) (Math.random() * count) + 1;
         System.out.println("选择是"+choice);
@@ -33,5 +41,18 @@ public class UserService {
             }
         }
         return list;
+        /**
+         * 选人的时候可以点击头像选人*/
+    }
+    public void refresh(){
+        um.refresh();
+    }
+    public String[] getAllTopic(){
+        List<String> allTopic = um.getAllTopic();
+        String[] result =  new String[allTopic.size()];
+        for (int i = 0; i < allTopic.size(); i++) {
+            result[i] = allTopic.get(i);
+        }
+        return result;
     }
 }

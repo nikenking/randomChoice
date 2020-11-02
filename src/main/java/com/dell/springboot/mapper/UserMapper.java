@@ -17,4 +17,9 @@ public interface UserMapper {
     public List<User> getAll();
     @Update("update student set weight= 0 where name=#{t.name}")
     public void changeTeacher(@Param("t") User user);
+    @Update("update student set weight= 1")
+    public void refresh();
+    @Select("select * from topic")
+    public List<String> getAllTopic();
+
 }
